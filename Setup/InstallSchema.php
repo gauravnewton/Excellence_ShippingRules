@@ -79,7 +79,7 @@ class InstallSchema implements InstallSchemaInterface
 		->addColumn(
             'customer_group',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-            '255',
+            255,
             [],
             'customer_group'
         )
