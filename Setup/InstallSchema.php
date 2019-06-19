@@ -14,9 +14,6 @@ use Magento\Framework\Setup\SchemaSetupInterface;
  */
 class InstallSchema implements InstallSchemaInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
 	
@@ -40,7 +37,7 @@ class InstallSchema implements InstallSchemaInterface
 		->addColumn(
             'name',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-            '64k',
+            255,
             [],
             'name'
         )
@@ -54,7 +51,7 @@ class InstallSchema implements InstallSchemaInterface
 		->addColumn(
             'shipping_method',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-            '64k',
+            255,
             [],
             'shipping_method'
         )
@@ -75,14 +72,14 @@ class InstallSchema implements InstallSchemaInterface
 		->addColumn(
             'store_view',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-            '64k',
+            255,
             [],
             'store_view'
         )
 		->addColumn(
             'customer_group',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-            '64k',
+            '255',
             [],
             'customer_group'
         )
@@ -94,7 +91,6 @@ class InstallSchema implements InstallSchemaInterface
         );
 		
 		$installer->getConnection()->createTable($table);
-		/*{{CedAddTable}}*/
 
         $installer->endSetup();
 
