@@ -83,14 +83,11 @@ class InstallSchema implements InstallSchemaInterface
             [],
             'customer_group'
         )
-		
         ->setComment(
             'Excellence ShippingRules shippingrules_shippingrules'
         );
-		
+
 		$installer->getConnection()->createTable($table);
-
         $installer->endSetup();
-
     }
 }
