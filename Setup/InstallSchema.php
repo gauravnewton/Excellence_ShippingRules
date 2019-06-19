@@ -83,8 +83,6 @@ class InstallSchema implements InstallSchemaInterface
             [],
             'customer_group'
         )
-		/*{{CedAddTableColumn}}}*/
-		
 		
         ->setComment(
             'Excellence ShippingRules shippingrules_shippingrules'
