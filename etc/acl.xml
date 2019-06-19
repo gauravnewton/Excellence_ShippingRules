@@ -4,7 +4,6 @@
         <resources>
             <resource id="Magento_Adminhtml::admin">
                 <resource id="Excellence_ShippingRules::shippingrules" title="shippingrules" sortOrder="100"/>
- <!--AddMenuAcl-->
             </resource>
         </resources>
     </acl>
