@@ -1,7 +1,7 @@
 <?php
 /*
-This is overrided using preference of Magento_Shipping
-module to handle shipping rule validation
+    This is overrided using preference of Magento_Shipping
+    module to handle shipping rule validation
  */
 namespace Excellence\ShippingRules\Model\Shipping;
 
@@ -200,7 +200,17 @@ class Shipping extends \Magento\Shipping\Model\Shipping
             if our shiping rules validated then only
             append this method to the result
              */
-            if (!empty($rowCollection->getData())) {
+            if($sliderStatus=$this->_helper->isShippingRulesEnabled()){
+                /*
+                    isShippingRulesEnabled ethod verifies our 
+                    shippingrules module is enabled or not 
+                    from store config
+                */
+                if (!empty($rowCollection->getData())) {
+                    $this->getResult()->append($result);
+                }
+            }
+            else{
                 $this->getResult()->append($result);
             }
         }
