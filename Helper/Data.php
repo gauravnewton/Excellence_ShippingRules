@@ -73,5 +73,4 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $current_customer_group_id = $this->_customerSession->getCustomer()->getGroupId();
         return $current_customer_group_id;
     }
-
 }
