@@ -23,7 +23,7 @@ class Edit extends \Magento\Backend\App\Action
             $model->load($id);
             if (!$model->getId()) {
                 $this->messageManager
-                    ->addError(__('This row no longer exists.'));
+                    ->addError(__('This shipping rule no longer exists.'));
                 $this->_redirect('*/*/');
                 return;
             }

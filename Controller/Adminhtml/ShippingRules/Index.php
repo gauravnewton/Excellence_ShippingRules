@@ -35,7 +35,7 @@ class Index extends Action
         $this->resultPage
             ->setActiveMenu('Excellence_ShippingRules::shippingrules');
         $this->resultPage
-            ->getConfig()->getTitle()->set((__('ShippingRules')));
+            ->getConfig()->getTitle()->set((__('Shipping Rules')));
         return $this->resultPage;
     }
 }
