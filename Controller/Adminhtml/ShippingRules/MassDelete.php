@@ -16,8 +16,8 @@ class MassDelete extends \Magento\Backend\App\Action
             try {
                 foreach ($ids as $id) {
                     $row = $this->_objectManager
-                            ->get('Excellence\ShippingRules\Model\ShippingRules')
-                            ->load($id);
+                        ->get('Excellence\ShippingRules\Model\ShippingRules')
+                        ->load($id);
                     $row->delete();
                 }
                 $this->messageManager->addSuccess(

@@ -33,9 +33,9 @@ class Index extends Action
     {
         $this->resultPage = $this->resultPageFactory->create();
         $this->resultPage
-                ->setActiveMenu('Excellence_ShippingRules::shippingrules');
+            ->setActiveMenu('Excellence_ShippingRules::shippingrules');
         $this->resultPage
-                ->getConfig()->getTitle()->set((__('ShippingRules')));
+            ->getConfig()->getTitle()->set((__('ShippingRules')));
         return $this->resultPage;
     }
 }

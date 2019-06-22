@@ -49,8 +49,7 @@ class Save extends \Magento\Backend\App\Action
 
             $this->_getSession()->setFormData($data);
             $this->_redirect('*/*/edit', array(
-                'id' => $this->getRequest()->getPostValue('id'),
-            ));
+                'id' => $this->getRequest()->getPostValue('id')));
             return;
         }
         $this->_redirect('*/*/');

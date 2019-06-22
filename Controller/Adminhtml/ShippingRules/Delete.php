@@ -11,8 +11,8 @@ class Delete extends \Magento\Backend\App\Action
         $id = $this->getRequest()->getParam('id');
         try {
             $banner = $this->_objectManager
-                        ->get('Excellence\ShippingRules\Model\ShippingRules')
-                        ->load($id);
+                ->get('Excellence\ShippingRules\Model\ShippingRules')
+                ->load($id);
             $banner->delete();
             $this->messageManager->addSuccess(
                 __('Shipping Rule Deleted successfully !')

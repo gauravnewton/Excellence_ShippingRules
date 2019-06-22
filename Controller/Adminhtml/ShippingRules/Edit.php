@@ -30,8 +30,8 @@ class Edit extends \Magento\Backend\App\Action
         }
         // 3. Set entered data if was error when we do save
         $data = $this->_objectManager
-                    ->get('Magento\Backend\Model\Session')
-                    ->getFormData(true);
+            ->get('Magento\Backend\Model\Session')
+            ->getFormData(true);
         if (!empty($data)) {
             $model->setData($data);
         }
