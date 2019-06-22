@@ -50,11 +50,16 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
         $rows = $this->_shippingRulesFactory->create()
             ->getCollection()->addFieldToFilter('status', array('eq' => 1)
-        )->addFieldToFilter('shipping_method', array('like' => '%' . $carrierCode . '%')
-        )->addFieldToFilter('store_view', array('like' => '%' . $this->getCurrentStoreId() . '%')
-        )->addFieldToFilter('customer_group', array('like' => '%' . $this->getCurrentCustomerGroupId() . '%')
-        )->addFieldToFilter('from_date', array('lteq' => $now->format('Y-m-d H:i:s'))
-        )->addFieldToFilter('to_date', array('gteq' => $now->format('Y-m-d H:i:s'))
+        )->addFieldToFilter('shipping_method',
+            array('like' => '%' . $carrierCode . '%')
+        )->addFieldToFilter('store_view',
+            array('like' => '%' . $this->getCurrentStoreId() . '%')
+        )->addFieldToFilter('customer_group',
+            array('like' => '%' . $this->getCurrentCustomerGroupId() . '%')
+        )->addFieldToFilter('from_date',
+            array('lteq' => $now->format('Y-m-d H:i:s'))
+        )->addFieldToFilter('to_date',
+            array('gteq' => $now->format('Y-m-d H:i:s'))
         );
         return $rows;
     }
