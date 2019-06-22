@@ -2,11 +2,7 @@
 <config
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <!-- <tab id="excellence" translate="label" sortOrder="100"> 
-            add a new tab with id excellence
-            <label>Excellence</label></tab> -->
         <section id="excellence_shipping_rules" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
-            <!-- add a new section with id excellence and for tab excellence -->
             <class>separator-top</class>
             <label>Shipping Rules Configuration</label>
             <tab>excellence</tab>
