@@ -12,21 +12,26 @@ class Edit extends \Magento\Backend\App\Action
         // 1. Get ID and create model
         $id = $this->getRequest()->getParam('id');
 
-        $model = $this->_objectManager->create('Excellence\ShippingRules\Model\ShippingRules');
+        $model = $this->_objectManager
+            ->create('Excellence\ShippingRules\Model\ShippingRules');
 
-        $registryObject = $this->_objectManager->get('Magento\Framework\Registry');
+        $registryObject = $this->_objectManager
+            ->get('Magento\Framework\Registry');
 
         // 2. Initial checking
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {
-                $this->messageManager->addError(__('This row no longer exists.'));
+                $this->messageManager
+                    ->addError(__('This row no longer exists.'));
                 $this->_redirect('*/*/');
                 return;
             }
         }
         // 3. Set entered data if was error when we do save
-        $data = $this->_objectManager->get('Magento\Backend\Model\Session')->getFormData(true);
+        $data = $this->_objectManager
+                    ->get('Magento\Backend\Model\Session')
+                    ->getFormData(true);
         if (!empty($data)) {
             $model->setData($data);
         }

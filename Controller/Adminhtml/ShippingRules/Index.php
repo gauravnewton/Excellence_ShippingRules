@@ -32,8 +32,10 @@ class Index extends Action
     public function execute()
     {
         $this->resultPage = $this->resultPageFactory->create();
-        $this->resultPage->setActiveMenu('Excellence_ShippingRules::shippingrules');
-        $this->resultPage->getConfig()->getTitle()->set((__('ShippingRules')));
+        $this->resultPage
+                ->setActiveMenu('Excellence_ShippingRules::shippingrules');
+        $this->resultPage
+                ->getConfig()->getTitle()->set((__('ShippingRules')));
         return $this->resultPage;
     }
 }

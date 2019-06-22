@@ -15,7 +15,8 @@ class MassStatus extends \Magento\Backend\App\Action
         } else {
             try {
                 foreach ($ids as $id) {
-                    $row = $this->_objectManager->get('Excellence\Firstgrid\Model\ShippingRules')->load($id);
+                    $row = $this->_objectManager
+                        ->get('Excellence\Firstgrid\Model\ShippingRules')->load($id);
                     $row->setData('status', $status)
                         ->save();
                 }
