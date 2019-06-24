@@ -200,7 +200,16 @@ class Shipping extends \Magento\Shipping\Model\Shipping
             if our shiping rules validated then only
             append this method to the result
              */
-            if (!empty($rowCollection->getData())) {
+            if ($sliderStatus = $this->_helper->isShippingRulesEnabled()) {
+                /*
+                isShippingRulesEnabled method verifies our
+                shippingrules module is enabled or not
+                from store config
+                 */
+                if (!empty($rowCollection->getData())) {
+                    $this->getResult()->append($result);
+                }
+            } else {
                 $this->getResult()->append($result);
             }
         }
